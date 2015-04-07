@@ -624,7 +624,7 @@
 622,CGG,CGG,6.02,$1.07B,,Energy,Oil & Gas Production,http://www.nasdaq.com/symbol/cgg,NYSE
 623,GIB,"CGI Group, Inc.",43.01,$12.11B,,Consumer Services,Professional Services,http://www.nasdaq.com/symbol/gib,NYSE
 624,CSG,Chambers Street Properties,7.92,$1.88B,,Consumer Services,Real Estate Investment Trusts,http://www.nasdaq.com/symbol/csg,NYSE
-625,ECOM          ,ChannelAdvisor Corporation,9.56,$238.43M,2013.0,Technology,Computer Software: Prepackaged Software,http://www.nasdaq.com/symbol/ecom          ,NYSE
+625,ECOM,ChannelAdvisor Corporation,9.56,$238.43M,2013.0,Technology,Computer Software: Prepackaged Software,http://www.nasdaq.com/symbol/ecom,NYSE
 626,CRL,"Charles River Laboratories International, Inc.",77.85,$3.68B,2000.0,Health Care,Biotechnology: Commercial Physical & Biological Resarch,http://www.nasdaq.com/symbol/crl,NYSE
 627,CLDT,Chatham Lodging Trust (REIT),29.67,$1.14B,2010.0,Consumer Services,Real Estate Investment Trusts,http://www.nasdaq.com/symbol/cldt,NYSE
 628,HELI,CHC Group Ltd.,1.33,$107.53M,2014.0,Transportation,Transportation Services,http://www.nasdaq.com/symbol/heli,NYSE
@@ -699,7 +699,7 @@
 697,CWEI,"Clayton Williams Energy, Inc.",50.72,$617.24M,1993.0,Energy,Oil & Gas Production,http://www.nasdaq.com/symbol/cwei,NYSE
 698,CLH,"Clean Harbors, Inc.",57.33,$3.38B,,Basic Industries,Environmental Services,http://www.nasdaq.com/symbol/clh,NYSE
 699,CCO,"Clear Channel Outdoor Holdings, Inc.",9.86,$3.55B,2005.0,Consumer Services,Advertising,http://www.nasdaq.com/symbol/cco,NYSE
-700,CBA           ,ClearBridge American Energy MLP Fund Inc.,15.8,$920.97M,2013.0,,,http://www.nasdaq.com/symbol/cba           ,NYSE
+700,CBA ,ClearBridge American Energy MLP Fund Inc.,15.8,$920.97M,2013.0,,,http://www.nasdaq.com/symbol/cba ,NYSE
 701,CEM,ClearBridge Energy MLP Fund Inc.,25.2,$1.74B,2010.0,,,http://www.nasdaq.com/symbol/cem,NYSE
 702,EMO,ClearBridge Energy MLP Opportunity Fund Inc.,21.03,$650.27M,2011.0,,,http://www.nasdaq.com/symbol/emo,NYSE
 703,CTR,ClearBridge Energy MLP Total Return Fund Inc.,19.99,$765.72M,2012.0,,,http://www.nasdaq.com/symbol/ctr,NYSE
@@ -972,7 +972,7 @@
 970,DD^B,E.I. du Pont de Nemours and Company,107.95,,,Basic Industries,Major Chemicals,http://www.nasdaq.com/symbol/dd^b,NYSE
 971,SSP,E.W. Scripps Company (The),25.41,$1.15B,,Consumer Services,Broadcasting,http://www.nasdaq.com/symbol/ssp,NYSE
 972,EXP,Eagle Materials Inc,82.75,$4.16B,,Capital Goods,Building Materials,http://www.nasdaq.com/symbol/exp,NYSE
-973,ECC           ,Eagle Point Credit Company Inc.,20.98,,2014.0,,,http://www.nasdaq.com/symbol/ecc           ,NYSE
+973,ECC ,Eagle Point Credit Company Inc.,20.98,,2014.0,,,http://www.nasdaq.com/symbol/ecc ,NYSE
 974,DEA,"Easterly Government Properties, Inc.",16.23,$363.04M,2015.0,Consumer Services,Real Estate Investment Trusts,http://www.nasdaq.com/symbol/dea,NYSE
 975,EGP,"EastGroup Properties, Inc.",61.05,$1.97B,,Consumer Services,Real Estate Investment Trusts,http://www.nasdaq.com/symbol/egp,NYSE
 976,EMN,Eastman Chemical Company,68.07,$10.14B,,Basic Industries,Major Chemicals,http://www.nasdaq.com/symbol/emn,NYSE
@@ -987,7 +987,7 @@
 985,EOS,Eaton Vance Enhanced Equity Income Fund II,14.05,$671.09M,2005.0,,,http://www.nasdaq.com/symbol/eos,NYSE
 986,EFT,Eaton Vance Floating Rate Income Trust,14.63,$605.29M,2004.0,,,http://www.nasdaq.com/symbol/eft,NYSE
 987,EFF,Eaton vance Floating-Rate Income Plus Fund,17.0,$129.31M,2013.0,,,http://www.nasdaq.com/symbol/eff,NYSE
-988,ETX           ,Eaton Vance Municipal Income 2028 Term Trust,17.74,$195.7M,2013.0,,,http://www.nasdaq.com/symbol/etx           ,NYSE
+988,ETX ,Eaton Vance Municipal Income 2028 Term Trust,17.74,$195.7M,2013.0,,,http://www.nasdaq.com/symbol/etx ,NYSE
 989,EOT,Eaton Vance Municipal Income Trust,21.17,$324.5M,2009.0,,,http://www.nasdaq.com/symbol/eot,NYSE
 990,EVN,Eaton Vance Municipal Income Trust,13.79,$322.75M,1999.0,,,http://www.nasdaq.com/symbol/evn,NYSE
 991,ETJ,Eaton Vance Risk-Managed Diversified Equity Income Fund,10.78,$717.21M,2007.0,,,http://www.nasdaq.com/symbol/etj,NYSE
@@ -1188,7 +1188,7 @@
 1186,FIF,First Trust Energy Infrastructure Fund,23.19,$406.99M,2011.0,,,http://www.nasdaq.com/symbol/fif,NYSE
 1187,FSD,First Trust High Income Long Short Fund,16.34,$589.16M,2010.0,,,http://www.nasdaq.com/symbol/fsd,NYSE
 1188,FPF,First Trust Intermediate Duration Preferred & Income Fund,22.55,$1.37B,2013.0,,,http://www.nasdaq.com/symbol/fpf,NYSE
-1189,FEI           ,First Trust MLP and Energy Income Fund,19.98,$907.88M,1984.0,,,http://www.nasdaq.com/symbol/fei           ,NYSE
+1189,FEI ,First Trust MLP and Energy Income Fund,19.98,$907.88M,1984.0,,,http://www.nasdaq.com/symbol/fei ,NYSE
 1190,FPL,First Trust New Opportunities MLP & Energy Fund,17.04,,2014.0,,,http://www.nasdaq.com/symbol/fpl,NYSE
 1191,FCT,First Trust Senior Floating Rate Income Fund II,13.85,$369.75M,2004.0,,,http://www.nasdaq.com/symbol/fct,NYSE
 1192,FGB,First Trust Specialty Finance and Financial Opportunities Fund,7.46,$106.55M,2007.0,,,http://www.nasdaq.com/symbol/fgb,NYSE
@@ -1292,7 +1292,7 @@
 1290,GWR,"Genesee & Wyoming, Inc.",97.34,$5.17B,,Transportation,Railroads,http://www.nasdaq.com/symbol/gwr,NYSE
 1291,GWRU,"Genesee & Wyoming, Inc.",121.95,,,Transportation,Railroads,http://www.nasdaq.com/symbol/gwru,NYSE
 1292,GEL,"Genesis Energy, L.P.",46.08,$4.38B,1996.0,Energy,Oil Refining/Marketing,http://www.nasdaq.com/symbol/gel,NYSE
-1293,GEN           ,"Genesis Healthcare, Inc.",7.14,$1.1B,,Health Care,Hospital/Nursing Management,http://www.nasdaq.com/symbol/gen           ,NYSE
+1293,GEN ,"Genesis Healthcare, Inc.",7.14,$1.1B,,Health Care,Hospital/Nursing Management,http://www.nasdaq.com/symbol/gen ,NYSE
 1294,GNE,Genie Energy Ltd.,9.01,$221.31M,2011.0,Public Utilities,Power Generation,http://www.nasdaq.com/symbol/gne,NYSE
 1295,GNE^A,Genie Energy Ltd.,6.91,,,,,http://www.nasdaq.com/symbol/gne^a,NYSE
 1296,G,Genpact Limited,23.16,$5.1B,2007.0,Consumer Services,Professional Services,http://www.nasdaq.com/symbol/g,NYSE
@@ -1451,7 +1451,7 @@
 1449,HF,"HFF, Inc.",38.18,$1.44B,2007.0,Consumer Services,Real Estate,http://www.nasdaq.com/symbol/hf,NYSE
 1450,HGG,"HHGregg, Inc.",6.29,$174.01M,2007.0,Consumer Services,Consumer Electronics/Video Chains,http://www.nasdaq.com/symbol/hgg,NYSE
 1451,HCLP,Hi-Crush Partners LP,36.51,$1.35B,2012.0,Basic Industries,Mining & Quarrying of Nonmetallic Minerals (No Fuels),http://www.nasdaq.com/symbol/hclp,NYSE
-1452,ONE           ,"Higher One Holdings, Inc.",2.74,$130.61M,2010.0,Miscellaneous,Business Services,http://www.nasdaq.com/symbol/one           ,NYSE
+1452,ONE ,"Higher One Holdings, Inc.",2.74,$130.61M,2010.0,Miscellaneous,Business Services,http://www.nasdaq.com/symbol/one ,NYSE
 1453,HIW,"Highwoods Properties, Inc.",46.29,$4.3B,1994.0,Consumer Services,Real Estate Investment Trusts,http://www.nasdaq.com/symbol/hiw,NYSE
 1454,HIL,"Hill International, Inc.",3.56,$179.33M,,Consumer Services,Military/Government/Technical,http://www.nasdaq.com/symbol/hil,NYSE
 1455,HI,Hillenbrand Inc,30.82,$1.94B,,Consumer Durables,Miscellaneous manufacturing industries,http://www.nasdaq.com/symbol/hi,NYSE
@@ -1588,7 +1588,7 @@
 1586,IRM,Iron Mountain Incorporated,37.15,$7.8B,,Consumer Services,Real Estate Investment Trusts,http://www.nasdaq.com/symbol/irm,NYSE
 1587,IRS,IRSA Inversiones Y Representaciones S.A.,19.75,$1.14B,,Consumer Services,Homebuilding,http://www.nasdaq.com/symbol/irs,NYSE
 1588,ICL,Israel Chemicals Shs,7.32,$9.31B,2014.0,Basic Industries,Agricultural Chemicals,http://www.nasdaq.com/symbol/icl,NYSE
-1589,STAR          ,iStar Financial Inc.,13.0,$1.11B,,Consumer Services,Real Estate Investment Trusts,http://www.nasdaq.com/symbol/star          ,NYSE
+1589,STAR,iStar Financial Inc.,13.0,$1.11B,,Consumer Services,Real Estate Investment Trusts,http://www.nasdaq.com/symbol/star,NYSE
 1590,STAR^D,iStar Financial Inc.,25.0049,,,,,http://www.nasdaq.com/symbol/star^d,NYSE
 1591,STAR^E,iStar Financial Inc.,24.7999,,,,,http://www.nasdaq.com/symbol/star^e,NYSE
 1592,STAR^F,iStar Financial Inc.,24.6599,,,,,http://www.nasdaq.com/symbol/star^f,NYSE
@@ -1615,7 +1615,7 @@
 1613,JNS,"Janus Capital Group, Inc",17.49,$3.27B,,Finance,Investment Managers,http://www.nasdaq.com/symbol/jns,NYSE
 1614,JOF,Japan Smaller Capitalization Fund Inc,10.0,$283.34M,1990.0,,,http://www.nasdaq.com/symbol/jof,NYSE
 1615,JAH,Jarden Corporation,53.01,$10.23B,,Consumer Durables,Consumer Specialties,http://www.nasdaq.com/symbol/jah,NYSE
-1616,JMI           ,Javelin Mortgage Investment Corp.,7.63,$91.45M,2012.0,Consumer Services,Real Estate Investment Trusts,http://www.nasdaq.com/symbol/jmi           ,NYSE
+1616,JMI ,Javelin Mortgage Investment Corp.,7.63,$91.45M,2012.0,Consumer Services,Real Estate Investment Trusts,http://www.nasdaq.com/symbol/jmi ,NYSE
 1617,JCAP,"Jernigan Capital, Inc.",21.44,,2015.0,Consumer Services,Real Estate Investment Trusts,http://www.nasdaq.com/symbol/jcap,NYSE
 1618,JKS,JinkoSolar Holding Company Limited,26.76,$831.34M,2010.0,Technology,Semiconductors,http://www.nasdaq.com/symbol/jks,NYSE
 1619,JMP,JMP Group LLC,8.2,$173.97M,2007.0,Finance,Investment Bankers/Brokers/Service,http://www.nasdaq.com/symbol/jmp,NYSE
@@ -1951,7 +1951,7 @@
 1949,MNR,Monmouth Real Estate Investment Corporation,11.2,$650.81M,,Consumer Services,Real Estate Investment Trusts,http://www.nasdaq.com/symbol/mnr,NYSE
 1950,MNR^A,Monmouth Real Estate Investment Corporation,25.6,,,,,http://www.nasdaq.com/symbol/mnr^a,NYSE
 1951,MNR^B,Monmouth Real Estate Investment Corporation,27.05,,,,,http://www.nasdaq.com/symbol/mnr^b,NYSE
-1952,MORE          ,"Monogram Residential Trust, Inc.",9.42,$1.57B,,,,http://www.nasdaq.com/symbol/more          ,NYSE
+1952,MORE,"Monogram Residential Trust, Inc.",9.42,$1.57B,,,,http://www.nasdaq.com/symbol/more,NYSE
 1953,MON,Monsanto Company,116.3,$56.21B,,Basic Industries,Agricultural Chemicals,http://www.nasdaq.com/symbol/mon,NYSE
 1954,MWW,"Monster Worldwide, Inc.",6.34,$575.78M,,Technology,Professional Services,http://www.nasdaq.com/symbol/mww,NYSE
 1955,MTS,"Montgomery Street Income Securities, Inc.",16.924,$175.43M,,,,http://www.nasdaq.com/symbol/mts,NYSE
@@ -2521,7 +2521,7 @@
 2519,RNF,"Rentech Nitrogen Partners, L.P.",14.62,$568.91M,2011.0,Basic Industries,Agricultural Chemicals,http://www.nasdaq.com/symbol/rnf,NYSE
 2520,RSG,"Republic Services, Inc.",40.12,$14.16B,1998.0,Public Utilities,Environmental Services,http://www.nasdaq.com/symbol/rsg,NYSE
 2521,RMD,ResMed Inc.,72.52,$10.19B,,Health Care,Medical/Dental Instruments,http://www.nasdaq.com/symbol/rmd,NYSE
-2522,REN           ,Resolute Energy Corporation,0.5902,$45.81M,,Energy,Oil & Gas Production,http://www.nasdaq.com/symbol/ren           ,NYSE
+2522,REN ,Resolute Energy Corporation,0.5902,$45.81M,,Energy,Oil & Gas Production,http://www.nasdaq.com/symbol/ren ,NYSE
 2523,RFP,Resolute Forest Products Inc.,17.69,$1.68B,,Basic Industries,Paper,http://www.nasdaq.com/symbol/rfp,NYSE
 2524,RSO,Resource Capital Corp.,4.49,$602.02M,2006.0,Consumer Services,Real Estate Investment Trusts,http://www.nasdaq.com/symbol/rso,NYSE
 2525,RSO^A,Resource Capital Corp.,23.97,,,,,http://www.nasdaq.com/symbol/rso^a,NYSE
@@ -2715,7 +2715,7 @@
 2713,SPE,Special Opportunities Fund Inc.,15.45,$120.97M,,,,http://www.nasdaq.com/symbol/spe,NYSE
 2714,SE,Spectra Energy Corp,36.06,$24.21B,,Public Utilities,Oil & Gas Production,http://www.nasdaq.com/symbol/se,NYSE
 2715,SEP,"Spectra Energy Partners, LP",51.94,$15.32B,2007.0,Public Utilities,Natural Gas Distribution,http://www.nasdaq.com/symbol/sep,NYSE
-2716,SPB           ,"Spectrum Brands Holdings, Inc.",88.24,$4.7B,,Miscellaneous,Industrial Machinery/Components,http://www.nasdaq.com/symbol/spb           ,NYSE
+2716,SPB ,"Spectrum Brands Holdings, Inc.",88.24,$4.7B,,Miscellaneous,Industrial Machinery/Components,http://www.nasdaq.com/symbol/spb ,NYSE
 2717,TRK,"Speedway Motorsports, Inc.",23.71,$979.23M,1995.0,Consumer Services,Services-Misc. Amusement & Recreation,http://www.nasdaq.com/symbol/trk,NYSE
 2718,SPR,"Spirit Aerosystems Holdings, Inc.",52.46,$7.29B,2006.0,Capital Goods,Military/Government/Technical,http://www.nasdaq.com/symbol/spr,NYSE
 2719,SRC,"Spirit Realty Capital, Inc.",12.3,$5.06B,2013.0,Consumer Services,Building operators,http://www.nasdaq.com/symbol/src,NYSE
@@ -3683,7 +3683,7 @@
 3681,BBEPP,"BreitBurn Energy Partners, L.P.",20.65,$165.2M,,Energy,Oil & Gas Production,http://www.nasdaq.com/symbol/bbepp,NASDAQ
 3682,BDGE,"Bridge Bancorp, Inc.",26.06,$305.01M,,Finance,Major Banks,http://www.nasdaq.com/symbol/bdge,NASDAQ
 3683,BBNK,Bridge Capital Holdings,26.28,$419.38M,,Finance,Major Banks,http://www.nasdaq.com/symbol/bbnk,NASDAQ
-3684,BLIN          ,"Bridgeline Digital, Inc.",0.4501,$10M,,Technology,Computer Software: Prepackaged Software,http://www.nasdaq.com/symbol/blin          ,NASDAQ
+3684,BLIN,"Bridgeline Digital, Inc.",0.4501,$10M,,Technology,Computer Software: Prepackaged Software,http://www.nasdaq.com/symbol/blin,NASDAQ
 3685,BRID,Bridgford Foods Corporation,8.06,$73.38M,,Consumer Non-Durables,Specialty Foods,http://www.nasdaq.com/symbol/brid,NASDAQ
 3686,BCOV,Brightcove Inc.,7.21,$234.48M,2012.0,Technology,EDP Services,http://www.nasdaq.com/symbol/bcov,NASDAQ
 3687,BRCM,Broadcom Corporation,42.23,$23.21B,1998.0,Technology,Semiconductors,http://www.nasdaq.com/symbol/brcm,NASDAQ
@@ -4180,13 +4180,13 @@
 4178,ENTR,"Entropic Communications, Inc.",2.99,$271.99M,2007.0,Technology,Semiconductors,http://www.nasdaq.com/symbol/entr,NASDAQ
 4179,ENVI,"Envivio, Inc.",1.79,$49.61M,2012.0,Technology,Radio And Television Broadcasting And Communications Equipment,http://www.nasdaq.com/symbol/envi,NASDAQ
 4180,ENZN,"Enzon Pharmaceuticals, Inc.",1.1,$48.6M,1984.0,Health Care,Biotechnology: Biological Products (No Diagnostic Substances),http://www.nasdaq.com/symbol/enzn,NASDAQ
-4181,ENZY          ,Enzymotec Ltd.,7.65,$171.99M,2013.0,Consumer Durables,Specialty Chemicals,http://www.nasdaq.com/symbol/enzy          ,NASDAQ
+4181,ENZY,Enzymotec Ltd.,7.65,$171.99M,2013.0,Consumer Durables,Specialty Chemicals,http://www.nasdaq.com/symbol/enzy,NASDAQ
 4182,EPIQ,"EPIQ Systems, Inc.",18.15,$672.3M,1997.0,Technology,EDP Services,http://www.nasdaq.com/symbol/epiq,NASDAQ
 4183,EPRS,"EPIRUS Biopharmaceuticals, Inc.",8.4,$189.29M,,Health Care,Major Pharmaceuticals,http://www.nasdaq.com/symbol/eprs,NASDAQ
 4184,EPZM,"Epizyme, Inc.",17.73,$611.19M,2013.0,Health Care,Major Pharmaceuticals,http://www.nasdaq.com/symbol/epzm,NASDAQ
 4185,PLUS,ePlus inc.,87.27,$644.95M,1996.0,Technology,Retail: Computer Software & Peripheral Equipment,http://www.nasdaq.com/symbol/plus,NASDAQ
 4186,EQIX,"Equinix, Inc.",235.6,$13.31B,2000.0,Public Utilities,Telecommunications Equipment,http://www.nasdaq.com/symbol/eqix,NASDAQ
-4187,EAC           ,Erickson Incorporated,4.08,$56.4M,2012.0,Capital Goods,Aerospace,http://www.nasdaq.com/symbol/eac           ,NASDAQ
+4187,EAC ,Erickson Incorporated,4.08,$56.4M,2012.0,Capital Goods,Aerospace,http://www.nasdaq.com/symbol/eac ,NASDAQ
 4188,ERIC,Ericsson,12.56,$40.68B,,Technology,Radio And Television Broadcasting And Communications Equipment,http://www.nasdaq.com/symbol/eric,NASDAQ
 4189,ERIE,Erie Indemnity Company,86.47,$3.99B,,Finance,Specialty Insurers,http://www.nasdaq.com/symbol/erie,NASDAQ
 4190,ESCA,"Escalade, Incorporated",17.1,$239.72M,,Consumer Non-Durables,Recreational Products/Toys,http://www.nasdaq.com/symbol/esca,NASDAQ
@@ -4505,7 +4505,7 @@
 4503,HLIT,Harmonic Inc.,7.38,$654.13M,1995.0,Technology,Radio And Television Broadcasting And Communications Equipment,http://www.nasdaq.com/symbol/hlit,NASDAQ
 4504,HRMNU,Harmony Merger Corp.,10.0,,2015.0,Finance,Business Services,http://www.nasdaq.com/symbol/hrmnu,NASDAQ
 4505,TINY,"Harris & Harris Group, Inc.",3.1,$96.97M,,Finance,Finance/Investors Services,http://www.nasdaq.com/symbol/tiny,NASDAQ
-4506,HART          ,"Harvard Apparatus Regenerative Technology, Inc.",3.25,$32.73M,,Health Care,Medical/Dental Instruments,http://www.nasdaq.com/symbol/hart          ,NASDAQ
+4506,HART,"Harvard Apparatus Regenerative Technology, Inc.",3.25,$32.73M,,Health Care,Medical/Dental Instruments,http://www.nasdaq.com/symbol/hart,NASDAQ
 4507,HBIO,"Harvard Bioscience, Inc.",6.22,$206.28M,2000.0,,,http://www.nasdaq.com/symbol/hbio,NASDAQ
 4508,HCAP,Harvest Capital Credit Corporation,13.11,$81.72M,2013.0,,,http://www.nasdaq.com/symbol/hcap,NASDAQ
 4509,HCAPL,Harvest Capital Credit Corporation,25.7,,,,,http://www.nasdaq.com/symbol/hcapl,NASDAQ
@@ -4616,7 +4616,7 @@
 4614,IMMR,Immersion Corporation,9.36,$259.7M,1999.0,Technology,Computer peripheral equipment,http://www.nasdaq.com/symbol/immr,NASDAQ
 4615,ICCC,ImmuCell Corporation,6.12,$18.53M,1987.0,Health Care,Biotechnology: In Vitro & In Vivo Diagnostic Substances,http://www.nasdaq.com/symbol/iccc,NASDAQ
 4616,IMDZ,Immune Design Corp.,27.91,$471.09M,2014.0,Health Care,Major Pharmaceuticals,http://www.nasdaq.com/symbol/imdz,NASDAQ
-4617,IMNP          ,Immune Pharmaceuticals Inc.,1.77,$33.98M,,Health Care,Major Pharmaceuticals,http://www.nasdaq.com/symbol/imnp          ,NASDAQ
+4617,IMNP,Immune Pharmaceuticals Inc.,1.77,$33.98M,,Health Care,Major Pharmaceuticals,http://www.nasdaq.com/symbol/imnp,NASDAQ
 4618,IMGN,"ImmunoGen, Inc.",9.405,$809.84M,1989.0,Health Care,Major Pharmaceuticals,http://www.nasdaq.com/symbol/imgn,NASDAQ
 4619,IMMU,"Immunomedics, Inc.",3.83,$357.67M,,Health Care,Biotechnology: In Vitro & In Vivo Diagnostic Substances,http://www.nasdaq.com/symbol/immu,NASDAQ
 4620,IPXL,"Impax Laboratories, Inc.",46.67,$3.33B,,Health Care,Major Pharmaceuticals,http://www.nasdaq.com/symbol/ipxl,NASDAQ
@@ -5933,7 +5933,7 @@
 5931,TNXP,Tonix Pharmaceuticals Holding Corp.,6.07,$97.96M,,Health Care,Major Pharmaceuticals,http://www.nasdaq.com/symbol/tnxp,NASDAQ
 5932,TISA,"Top Image Systems, Ltd.",3.32,$59.15M,1996.0,Technology,Computer peripheral equipment,http://www.nasdaq.com/symbol/tisa,NASDAQ
 5933,TOPS,TOP Ships Inc.,1.14,$21.63M,,Transportation,Marine Transportation,http://www.nasdaq.com/symbol/tops,NASDAQ
-5934,TORM          ,TOR Minerals International Inc,6.1539,$18.55M,1988.0,Basic Industries,Major Chemicals,http://www.nasdaq.com/symbol/torm          ,NASDAQ
+5934,TORM,TOR Minerals International Inc,6.1539,$18.55M,1988.0,Basic Industries,Major Chemicals,http://www.nasdaq.com/symbol/torm,NASDAQ
 5935,TRCH,"Torchlight Energy Resources, Inc.",0.3681,$8.54M,,Energy,Oil & Gas Production,http://www.nasdaq.com/symbol/trch,NASDAQ
 5936,TRNX,Tornier N.V.,26.1,$1.28B,2011.0,Health Care,Industrial Specialties,http://www.nasdaq.com/symbol/trnx,NASDAQ
 5937,TSEM,Tower Semiconductor Ltd.,17.72,$1.35B,1994.0,Technology,Semiconductors,http://www.nasdaq.com/symbol/tsem,NASDAQ
@@ -6605,7 +6605,7 @@
 6603,SGA,"Saga Communications, Inc.",41.26,$239.26M,,Consumer Services,Broadcasting,http://www.nasdaq.com/symbol/sga,AMEX
 6604,SSN,Samson Oil & Gas Limited,1.66,$23.55M,,Energy,Oil & Gas Production,http://www.nasdaq.com/symbol/ssn,AMEX
 6605,SPP,Sanchez Production Partners LP,2.05,$59.02M,,Energy,Oil & Gas Production,http://www.nasdaq.com/symbol/spp,AMEX
-6606,SAND          ,Sandstorm Gold Ltd,3.49,$410M,,Basic Industries,Precious Metals,http://www.nasdaq.com/symbol/sand          ,AMEX
+6606,SAND,Sandstorm Gold Ltd,3.49,$410M,,Basic Industries,Precious Metals,http://www.nasdaq.com/symbol/sand,AMEX
 6607,SARA,Saratoga Resources Inc,0.21,$6.51M,,Energy,Oil & Gas Production,http://www.nasdaq.com/symbol/sara,AMEX
 6608,SEB,Seaboard Corporation,4171.95,$4.88B,1996.0,,,http://www.nasdaq.com/symbol/seb,AMEX
 6609,SVT,"Servotronics, Inc.",7.05,$17.19M,,Capital Goods,Industrial Machinery/Components,http://www.nasdaq.com/symbol/svt,AMEX
