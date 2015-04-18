@@ -18,10 +18,11 @@ def minutestockdata(ticker, days):
             'DATE', 'CLOSE', 'HIGH', 'LOW', 'OPEN', 'VOLUME'
 
     """
-    link = 'http://www.google.com/finance/getprices?i=60&p=%dd&f=d,o,h,l,c,v&df=cpct&q=%s' % (days, ticker)
+    link = 'http://www.google.com/finance/getprices?i=60&p=%dd&f=d,o,h,l,c,v&df=cpct&q=%s' % (
+        days, ticker)
     res = requests.get(link)
     stin = res.text
-    colheaders = stin[stin.index('COLUMNS')+8:stin.index('\nDATA')+1]
+    colheaders = stin[stin.index('COLUMNS') + 8:stin.index('\nDATA') + 1]
     csvstart = stin.index('\na') + 1
     csv = stin[csvstart:]
     in_data = StringIO()
@@ -50,22 +51,27 @@ def minutestockdata(ticker, days):
             print 'ERROR'
     print daysc
     df.drop('DATE', axis=1)
-    pdts =  pd.to_datetime(datetms, unit='s').tz_localize('UTC').tz_convert('US/Eastern')  # pandas timestamps
+    pdts = pd.to_datetime(datetms, unit='s').tz_localize(
+        'UTC').tz_convert('US/Eastern')  # pandas timestamps
     df['DATE'] = pd.Series(pdts)
     dft = df.set_index('DATE')
     # dft.index.tz_localize('UTC').tz_convert('US/Eastern')
     return dft
 
+
 def main(companies):
     companieslist = companies.Symbol.tolist()
-    for company in companieslist:
-        print company
-        try:
-            df = minutestockdata(company, 14)
-        except:
-            print 'ERROR'
-        else:
-            df.to_csv('./data/historical/minute/%s.csv' % company)
+    # lastfound = companieslist.index('PAH')
+    lastfound = 0
+    for i, company in enumerate(companieslist):
+        if i >= lastfound:
+            print company
+            try:
+                df = minutestockdata(company, 14)
+            except:
+                print 'ERROR'
+            else:
+                df.to_csv('./data/historical/minute/%s.csv' % company)
 
 if __name__ == '__main__':
     from finance.data.exchanges import master
