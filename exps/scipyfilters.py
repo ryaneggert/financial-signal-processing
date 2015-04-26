@@ -6,7 +6,7 @@ from pandas import read_csv
 exclude_transients = True
 
 
-def movingaveragefilter(data, flen):
+def SMAfilter(data, flen):
     b = np.asarray([1] * flen).astype(np.float64)
     a = np.asarray([flen]).astype(np.float64)
     out = signal.lfilter(b, a, data)
@@ -47,22 +47,23 @@ def MMAfilter(data, flen):
     mma = 2 * wmah - wmaf
     return mma
 
+
 def HMAfilter(data, flen):
     """ Hull Moving Average
     http://www.financialwisdomforum.org/gummy-stuff/MA-stuff.htm
     """
-    mma = MMAfilter(data, flen**2)
+    mma = MMAfilter(data, flen ** 2)
     hull = WMAfilter(data, flen, flen)
     return hull
 
 df = read_csv('../data/historical/minute/AAPL.csv')
 
-x = df['CLOSE'].tolist()[4000:5300]
+x = df['CLOSE'].tolist()[3000:3500]
 length = len(x)
 n = range(length)
 # x = [randint(0, 10) for size in n]
 filtlen = 30
-maout = movingaveragefilter(x, filtlen)
+maout = SMAfilter(x, filtlen)
 wmaout = WMAfilter(x, filtlen, filtlen + 1)
 emaout = EMAfilter(x, filtlen, .25)
 trixout = TRIXfilter(x, filtlen, .5)
@@ -70,13 +71,15 @@ mmaout = MMAfilter(x, 16)
 hmaout = HMAfilter(x, 15)
 
 if exclude_transients:
-    plt.plot(n[filtlen:], x[filtlen:], '-', label="Stock Data")
-    plt.plot(n[filtlen:], maout[filtlen:], label="Moving Average")
-    plt.plot(n[filtlen:], wmaout[filtlen:], label="Weighted Moving Average")
-    plt.plot(n[filtlen:], emaout[filtlen:], label="Exponential Moving Average")
-    plt.plot(n[filtlen:], trixout[filtlen:], label="Triple EMA")
-    plt.plot(n[filtlen:], mmaout[filtlen:], label="MMA")
-    plt.plot(n[filtlen:], hmaout[filtlen:], label="Hull")
+    plt.plot(n[filtlen:], x[filtlen:], linewidth=2, label="Stock Data")
+    plt.plot(n[filtlen:], maout[filtlen:], linewidth=1, label="Moving Average")
+    plt.plot(n[filtlen:], wmaout[filtlen:], linewidth=1,
+             label="Weighted Moving Average")
+    plt.plot(n[filtlen:], emaout[filtlen:], linewidth=1,
+             label="Exponential Moving Average")
+    plt.plot(n[filtlen:], trixout[filtlen:], linewidth=1, label="Triple EMA")
+    plt.plot(n[filtlen:], mmaout[filtlen:], linewidth=1, label="MMA")
+    plt.plot(n[filtlen:], hmaout[filtlen:], linewidth=2, label="Hull")
 else:
     plt.plot(n, x, '-', label="Stock Data")
     plt.plot(n, maout, label="Moving Average")
