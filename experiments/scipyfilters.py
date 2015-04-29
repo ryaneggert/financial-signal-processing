@@ -56,6 +56,14 @@ def HMAfilter(data, flen):
     hull = WMAfilter(data, flen, flen)
     return hull
 
+
+def Derivativefilter(data):
+    bcoeffs = [1, -1]
+    b = np.asarray(bcoeffs).astype(np.float64)
+    a = np.asarray([1]).astype(np.float64)
+    out = signal.lfilter(b, a, data)
+    return out
+
 df = read_csv('../data/historical/minute/AAPL.csv')
 
 x = df['CLOSE'].tolist()[3000:3500]
@@ -69,6 +77,8 @@ emaout = EMAfilter(x, filtlen, .25)
 trixout = TRIXfilter(x, filtlen, .5)
 mmaout = MMAfilter(x, 16)
 hmaout = HMAfilter(x, 15)
+dtout = Derivativefilter(x)
+print dtout
 
 if exclude_transients:
     plt.plot(n[filtlen:], x[filtlen:], linewidth=2, label="Stock Data")
