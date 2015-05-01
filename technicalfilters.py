@@ -68,3 +68,37 @@ class Derivative(technical.EventBasedFilter):
     def __init__(self, dataSeries, maxLen=dataseries.DEFAULT_MAX_LEN):
         technical.EventBasedFilter.__init__(
             self, dataSeries, DerivativeEventWindow(), maxLen)
+
+
+class ZeroSeriesEventWindow(technical.EventWindow):
+
+    def __init__(self):
+        technical.EventWindow.__init__(self, 2)
+
+    def ZeroSeriesfilter(self, data):
+        bcoeffs = [0]
+        b = np.asarray(bcoeffs).astype(np.float64)
+        a = np.asarray([1]).astype(np.float64)
+        out = signal.lfilter(b, a, data)
+        return out
+
+    def onNewValue(self, dateTime, value):
+        technical.EventWindow.onNewValue(self, dateTime, value)
+
+    def getValue(self):
+        ret = None
+        if self.windowFull():
+            these_vals = self.getValues()
+            filt = self.ZeroSeriesfilter(these_vals)
+            ret = filt[-1]
+        return ret
+
+
+class ZeroSeries(technical.EventBasedFilter):
+
+    """Exponential Moving Average filter.
+    """
+
+    def __init__(self, dataSeries, maxLen=dataseries.DEFAULT_MAX_LEN):
+        technical.EventBasedFilter.__init__(
+            self, dataSeries, ZeroSeriesEventWindow(), maxLen)

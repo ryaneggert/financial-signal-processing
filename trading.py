@@ -1,7 +1,10 @@
 # trading.py
-
+from pyalgotrade import plotter
 from pyalgotrade.tools import yahoofinance
 from pyalgotrade.stratanalyzer import returns
+from pyalgotrade.utils import stats
+from pyalgotrade.broker import backtesting
+from random import sample, choice
 
 
 from datetime import date
@@ -61,19 +64,41 @@ def find_instruments_by_year(start_year):
 
 def main():
     firstyear = 2012
-    instruments = find_instruments_by_year(firstyear)
-    feed = build_stock_feed(instruments, [firstyear, 2015])
+    lastyear = 2015
+    num_instr = 3
+    posinstruments = find_instruments_by_year(firstyear)
+    instruments = sample(posinstruments, num_instr)
+    feed = build_stock_feed(instruments, [firstyear, lastyear])
     EMA_Crossover = sgs.EMACrossover(feed, instruments, 100000)
 
     retAnalyzer = returns.Returns()
     EMA_Crossover.attachAnalyzer(retAnalyzer)
+    # EMA_Crossover.getBroker().setCommission(
+    # backtesting.TradePercentage(.01))  # 1.% commission per trade
+    EMA_Crossover.getBroker().setCommission(
+        backtesting.FixedPerTrade(10))  # $10 commission per trade
 
+    # Attach plotters
+    # Attach the plotter to the strategy.
+    plt = plotter.StrategyPlotter(EMA_Crossover)
+    # Include the SMA in the instrument's subplot to get it displayed along
+    # with the closing prices.
+    pltinstr = choice(instruments)
+    plt.getInstrumentSubplot(pltinstr).addDataSeries(
+        "EMA", EMA_Crossover.getEMA(pltinstr))
+    # Plot the simple returns on each bar.
+    # plt.getOrCreateSubplot("returns").addDataSeries(
+    #     "Simple returns", retAnalyzer.getReturns())
     # Run the strategy
     EMA_Crossover.run()
 
+    # Print the results.
+    print "Final portfolio value: $%.2f" % EMA_Crossover.getResult()
+    print "Annual return: %.2f %%" % (retAnalyzer.getCumulativeReturns()[-1] * 100)
+    print "Average daily return: %.2f %%" % (stats.mean(retAnalyzer.getReturns()) * 100)
+    print "Std. dev. daily return: %.4f" % (stats.stddev(retAnalyzer.getReturns()))
 
-
-
+    plt.plot()
 
 if __name__ == '__main__':
     main()
