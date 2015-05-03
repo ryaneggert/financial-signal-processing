@@ -64,9 +64,12 @@ def Derivativefilter(data):
     out = signal.lfilter(b, a, data)
     return out
 
-df = read_csv('../data/historical/minute/AAPL.csv')
+# df = read_csv('../data/historical/minute/AAPL.csv')
 
-x = df['CLOSE'].tolist()[3000:3500]
+# x = df['CLOSE'].tolist()[3000:3500]
+
+df = read_csv('../data/historical/daily-atrader/JCI-2011-yahoofinance.csv')
+x = df['Close'].tolist()
 length = len(x)
 n = range(length)
 # x = [randint(0, 10) for size in n]
@@ -76,27 +79,34 @@ wmaout = WMAfilter(x, filtlen, filtlen + 1)
 emaout = EMAfilter(x, filtlen, .25)
 trixout = TRIXfilter(x, filtlen, .5)
 mmaout = MMAfilter(x, 16)
-hmaout = HMAfilter(x, 15)
+hmaout = HMAfilter(x, 6)
 dtout = Derivativefilter(x)
 print dtout
 
-if exclude_transients:
-    plt.plot(n[filtlen:], x[filtlen:], linewidth=2, label="Stock Data")
-    plt.plot(n[filtlen:], maout[filtlen:], linewidth=1, label="Moving Average")
-    plt.plot(n[filtlen:], wmaout[filtlen:], linewidth=1,
-             label="Weighted Moving Average")
-    plt.plot(n[filtlen:], emaout[filtlen:], linewidth=1,
-             label="Exponential Moving Average")
-    plt.plot(n[filtlen:], trixout[filtlen:], linewidth=1, label="Triple EMA")
-    plt.plot(n[filtlen:], mmaout[filtlen:], linewidth=1, label="MMA")
-    plt.plot(n[filtlen:], hmaout[filtlen:], linewidth=2, label="Hull")
-else:
-    plt.plot(n, x, '-', label="Stock Data")
-    plt.plot(n, maout, label="Moving Average")
-    plt.plot(n, wmaout, label="Weighted Moving Average")
-    plt.plot(n, emaout, label="Exponential Moving Average")
-    plt.plot(n, trixout, label="Triple EMA")
-    plt.plot(n, mmaout, label="MMA")
-    plt.plot(n, hmaout, label="Hull")
+maxlen = 50
+plt.plot(n[maxlen:], x[maxlen:], linewidth=2, label="Stock Data")
+for i in [5,50]:
+
+    plt.plot(n[maxlen:], TRIXfilter(x, i, .2)[maxlen:], label="TRIX l=%d" % i)
+
+
+# if exclude_transients:
+#     plt.plot(n[filtlen:], x[filtlen:], linewidth=2, label="Stock Data")
+#     plt.plot(n[filtlen:], maout[filtlen:], linewidth=1, label="Moving Average")
+#     plt.plot(n[filtlen:], wmaout[filtlen:], linewidth=1,
+#              label="Weighted Moving Average")
+#     plt.plot(n[filtlen:], emaout[filtlen:], linewidth=1,
+#              label="Exponential Moving Average")
+#     plt.plot(n[filtlen:], trixout[filtlen:], linewidth=1, label="Triple EMA")
+#     plt.plot(n[filtlen:], mmaout[filtlen:], linewidth=1, label="MMA")
+#     plt.plot(n[filtlen:], hmaout[filtlen:], linewidth=2, label="Hull")
+# else:
+#     plt.plot(n, x, '-', label="Stock Data")
+#     plt.plot(n, maout, label="Moving Average")
+#     plt.plot(n, wmaout, label="Weighted Moving Average")
+#     plt.plot(n, emaout, label="Exponential Moving Average")
+#     plt.plot(n, trixout, label="Triple EMA")
+#     plt.plot(n, mmaout, label="MMA")
+#     plt.plot(n, hmaout, label="Hull")
 plt.legend()
 plt.show()
