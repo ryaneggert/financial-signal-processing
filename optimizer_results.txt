@@ -1,0 +1,10 @@
+optimizer_results.txt
+
+    instruments = ['JCI', 'AAPL', 'YUM', 'ABC']
+    cash = [100000]
+    ema_len = range(1, 90, 5)
+    ema_alpha = arange(0, 1, .1).tolist()
+    commission_scheme = [('TradePercentage', .01), ('FixedPerTrade', 10)]
+
+Best final result 133885.49211 with parameters: (['JCI', 'AAPL', 'YUM', 'ABC'], 100000, 36, 0.9, ('FixedPerTrade', 10))
+________________________________________________________________________________
