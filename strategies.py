@@ -10,7 +10,7 @@ from pyalgotrade.broker import backtesting
 
 class EMACrossover(strategy.BacktestingStrategy):
 
-    def __init__(self, feed, instruments, cash, ema_length, ema_alpha, commission_scheme):
+    def __init__(self, feed, instruments, cash, ema_length, ema_alpha, commission_scheme, printinfo=True):
         """
 
         Params:
@@ -22,7 +22,7 @@ class EMACrossover(strategy.BacktestingStrategy):
 
         # We wan't to use adjusted close prices instead of close.
         self.setUseAdjustedValues(True)
-
+        self.printinfo = printinfo
         # Commission
         self.getBroker().setCommission(
             getattr(backtesting, commission_scheme[0])(commission_scheme[1]))
@@ -63,6 +63,7 @@ class EMACrossover(strategy.BacktestingStrategy):
 
     def onBars(self, bars):
         for instrument, bar in bars.items():
+            infoout = None
             if cross.cross_above(self.__dt[instrument], self.__zeroema[instrument]) > 0:
                 # If the derivative crosses above zero (deriv - -> +),
                 # buy the instrument.
@@ -70,8 +71,8 @@ class EMACrossover(strategy.BacktestingStrategy):
                 buyqty = self.buyamount(
                     instrument, bar.getClose(), bar.getVolume(), now_cash, .2)
                 self.marketOrder(instrument, buyqty)
-                # self.info('Order %d shares of %s @$%.2f. COH $%.2f' %
-                #           (buyqty, instrument, bar.getClose(), now_cash))
+                infoout = 'Order %d shares of %s @$%.2f. COH $%.2f' % (
+                    buyqty, instrument, bar.getClose(), now_cash)
 
             elif cross.cross_below(self.__dt[instrument], self.__zeroema[instrument]) > 0:
                 # If the derivative crosses below zero (deriv + -> -),
@@ -80,23 +81,18 @@ class EMACrossover(strategy.BacktestingStrategy):
                 if now_shares > 0:
                     # Sell all shares
                     self.marketOrder(instrument, -now_shares)
-                    # self.info('Sell %d shares of %s @$%.2f. COH $%.2f' %
-                    #           (now_shares, instrument, bar.getClose(), now_cash))
-            # self.info("%s %s %s %s" %
-            #           (
-            #               bar.getClose(),
-            #               self.__dt[instrument][-2:],
-            #               self.__zeroema[instrument][-2:],
-            #               cross.cross_above(self.__dt[instrument], self.__zeroema[instrument]))
-            #           )
+                    infoout = 'Sell %d shares of %s @$%.2f. COH $%.2f' % (
+                        now_shares, instrument, bar.getClose(), now_cash)
+            if infoout and self.printinfo:
+                self.info(infoout)
 
 
 class SLTRIXCrossover(strategy.BacktestingStrategy):
 
-    def __init__(self, feed, instruments, cash):
+    def __init__(self, feed, instruments, cash, shortlen, longlen, a1, a3, printinfo=True):
         strategy.BacktestingStrategy.__init__(self, feed, cash)
-
-        # We wan't to use adjusted close prices instead of close.
+        self.printinfo = printinfo
+        # We want to use adjusted close prices instead of close.
         self.setUseAdjustedValues(True)
 
         # Initialize indicators for each instrument.
@@ -104,12 +100,16 @@ class SLTRIXCrossover(strategy.BacktestingStrategy):
         self.__shorttrix = {}
         self.__longtrix = {}
 
+        # Commission
+        self.getBroker().setCommission(
+            getattr(backtesting, 'FixedPerTrade')(10))
+
         for instrument in instruments:
             self.__closes[instrument] = feed[instrument].getPriceDataSeries()
             self.__shorttrix[instrument] = tf.TRIX(
-                self.__closes[instrument], 5, [.2, .2, .2])
+                self.__closes[instrument], shortlen, [a1, a1, a3])
             self.__longtrix[instrument] = tf.TRIX(
-                self.__closes[instrument], 50, [.2, .2, .2])
+                self.__closes[instrument], longlen, [a1, a1, a3])
 
     def inventory(self, instrument):
         broker = self.getBroker()
@@ -133,29 +133,27 @@ class SLTRIXCrossover(strategy.BacktestingStrategy):
 
     def onBars(self, bars):
         for instrument, bar in bars.items():
-            if cross.cross_above(self.__shorttrix[instrument], self.__longtrix[instrument]) > 0:
+            infoout = None
+            if cross.cross_above(self.__shorttrix[instrument],
+                                 self.__longtrix[instrument]) > 0:
                 # If the derivative crosses above zero (deriv - -> +),
                 # buy the instrument.
                 now_cash, now_shares = self.inventory(instrument)
                 buyqty = self.buyamount(
                     instrument, bar.getClose(), bar.getVolume(), now_cash, .2)
                 self.marketOrder(instrument, buyqty)
-                self.info('Order %d shares of %s @$%.2f. COH $%.2f' %
-                          (buyqty, instrument, bar.getClose(), now_cash))
+                infoout = 'Order %d shares of %s @$%.2f. COH $%.2f' % (
+                    buyqty, instrument, bar.getClose(), now_cash)
 
-            elif cross.cross_below(self.__shorttrix[instrument], self.__longtrix[instrument]) > 0:
+            elif cross.cross_below(self.__shorttrix[instrument],
+                                   self.__longtrix[instrument]) > 0:
                 # If the derivative crosses below zero (deriv + -> -),
                 # sell the instrument.
                 now_cash, now_shares = self.inventory(instrument)
                 if now_shares > 0:
                     # Sell all shares
                     self.marketOrder(instrument, -now_shares)
-                    self.info('Sell %d shares of %s @$%.2f. COH $%.2f' %
-                              (now_shares, instrument, bar.getClose(), now_cash))
-            # self.info("%s %s %s %s" %
-            #           (
-            #               bar.getClose(),
-            #               self.__dt[instrument][-2:],
-            #               self.__zeroema[instrument][-2:],
-            #               cross.cross_above(self.__dt[instrument], self.__zeroema[instrument]))
-            #           )
+                    infoout = 'Sell %d shares of %s @$%.2f. COH $%.2f' % (
+                        now_shares, instrument, bar.getClose(), now_cash)
+            if infoout and self.printinfo:
+                self.info(infoout)
