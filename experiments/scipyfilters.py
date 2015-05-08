@@ -5,6 +5,12 @@ from pandas import read_csv
 
 exclude_transients = True
 
+def NOfilter(data, flen):
+    b = np.asarray([1]).astype(np.float64)
+    a = np.asarray([1]).astype(np.float64)
+    out = signal.lfilter(b, a, data)
+    return out
+
 
 def SMAfilter(data, flen):
     b = np.asarray([1] * flen).astype(np.float64)
@@ -68,7 +74,7 @@ def Derivativefilter(data):
 
 # x = df['CLOSE'].tolist()[3000:3500]
 
-df = read_csv('../data/historical/daily-atrader/JCI-2011-yahoofinance.csv')
+df = read_csv('../data/historical/daily-atrader/JCI-2014-yahoofinance.csv')
 x = df['Close'].tolist()
 length = len(x)
 n = range(length)
@@ -81,32 +87,42 @@ trixout = TRIXfilter(x, filtlen, .5)
 mmaout = MMAfilter(x, 16)
 hmaout = HMAfilter(x, 6)
 dtout = Derivativefilter(x)
-print dtout
+noout = NOfilter(x, 30)
+emaout1 = TRIXfilter(x, 5, 0)
+emaout2 = TRIXfilter(x, 20, 0)
+# emaout3 = TRIXfilter(x, filtlen, .60)
 
-maxlen = 50
-plt.plot(n[maxlen:], x[maxlen:], linewidth=2, label="Stock Data")
-for i in [5,50]:
+# maxlen = 50
+# plt.plot(n[maxlen:], x[maxlen:], linewidth=2, label="Stock Data")
+# for i in [5,50]:
 
-    plt.plot(n[maxlen:], TRIXfilter(x, i, .2)[maxlen:], label="TRIX l=%d" % i)
+#     plt.plot(n[maxlen:], TRIXfilter(x, i, .2)[maxlen:], label="TRIX l=%d" % i)
 
 
-# if exclude_transients:
-#     plt.plot(n[filtlen:], x[filtlen:], linewidth=2, label="Stock Data")
-#     plt.plot(n[filtlen:], maout[filtlen:], linewidth=1, label="Moving Average")
-#     plt.plot(n[filtlen:], wmaout[filtlen:], linewidth=1,
-#              label="Weighted Moving Average")
-#     plt.plot(n[filtlen:], emaout[filtlen:], linewidth=1,
-#              label="Exponential Moving Average")
-#     plt.plot(n[filtlen:], trixout[filtlen:], linewidth=1, label="Triple EMA")
-#     plt.plot(n[filtlen:], mmaout[filtlen:], linewidth=1, label="MMA")
-#     plt.plot(n[filtlen:], hmaout[filtlen:], linewidth=2, label="Hull")
-# else:
-#     plt.plot(n, x, '-', label="Stock Data")
-#     plt.plot(n, maout, label="Moving Average")
-#     plt.plot(n, wmaout, label="Weighted Moving Average")
-#     plt.plot(n, emaout, label="Exponential Moving Average")
-#     plt.plot(n, trixout, label="Triple EMA")
-#     plt.plot(n, mmaout, label="MMA")
-#     plt.plot(n, hmaout, label="Hull")
-plt.legend()
+if exclude_transients:
+    plt.plot(n[filtlen:], x[filtlen:], linewidth=2, label="Stock Data")
+    # plt.plot(n[filtlen:], maout[filtlen:], linewidth=2, label="Simple Moving Average")
+    # plt.plot(n[filtlen:], wmaout[filtlen:], linewidth=1,
+    #          label="Weighted Moving Average")
+    plt.plot(n[filtlen:], emaout1[filtlen:], linewidth=1,
+             label="TRIX Moving Average, L = 4")
+    plt.plot(n[filtlen:], emaout2[filtlen:], linewidth=1,
+             label="TRIX Moving Average, L = 15", color='#A446EB')
+    # plt.plot(n[filtlen:], emaout3[filtlen:], linewidth=1,
+             # label="TRIX Moving Average, %s = %s = %s = 0.60" % (r'$\alpha_1$', r'$\alpha_2$', r'$\alpha_3$'))
+    # plt.plot(n[filtlen:], trixout[filtlen:], linewidth=1, label="Triple EMA")
+    # plt.plot(n[filtlen:], mmaout[filtlen:], linewidth=1, label="MMA")
+    # plt.plot(n[filtlen:], hmaout[filtlen:], linewidth=2, label="Hull")
+else:
+    plt.plot(n, x, '-', label="Stock Data")
+    plt.plot(n, maout, label="Moving Average")
+    plt.plot(n, wmaout, label="Weighted Moving Average")
+    plt.plot(n, emaout, label="Exponential Moving Average")
+    plt.plot(n, trixout, label="Triple EMA")
+    plt.plot(n, mmaout, label="MMA")
+    plt.plot(n, hmaout, label="Hull")
+plt.legend(loc=4)
+plt.xlabel('Time [Days]', fontsize=20)
+plt.ylabel('Price per share [$]', fontsize=20)
+plt.title('TRIX Moving Average, Johnson Controls 2011', fontsize=25)
 plt.show()

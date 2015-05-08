@@ -7,7 +7,7 @@ import data_handling as daq
 
 
 def time_estimator(parameters):
-    time_per_run = 10
+    time_per_run = 9.7
     no_of_runs = len(list(parameters))
     print list(parameters)
     est_dur = time_per_run * no_of_runs
@@ -20,15 +20,31 @@ def time_estimator(parameters):
 def EMACrossoverParams(instruments):
     instruments = [instruments]
     cash = [100000]
-    ema_len = range(1, 90, 5)
-    ema_alpha = arange(0, 1, .1).tolist()
-    commission_scheme = [('TradePercentage', .01), ('FixedPerTrade', 10)]
+    ema_len = range(25, 35, 1)
+    ema_alpha = arange(.8, 1, .01).tolist()
+    commission_scheme = [('FixedPerTrade', 10)]
     outparams = itertools.product(
         instruments, cash, ema_len, ema_alpha, commission_scheme)
     time_estimator(outparams)
     return itertools.product(
         instruments, cash, ema_len, ema_alpha, commission_scheme)
 
+
+
+def SLTRIXCrossoverParams(instruments):
+    instruments = [instruments]
+    cash = [100000]
+    shortlen = range(3, 7, 1)
+    longlen = range(9, 15, 1)
+    a1 = arange(.1,.3, .02 )
+    a3 = arange(.3,.5, .02 )
+    outparams = itertools.product(
+        instruments, cash, shortlen, longlen, a1, a3)
+    time_estimator(outparams)
+    return itertools.product(
+       instruments, cash, shortlen, longlen, a1, a3)
+
+# feed, instruments, cash, shortlen, longlen, sha1, sha2, sha3, la1, la2, la3)
 
 def parameters_generator():
     instrument = ["dia"]
@@ -42,9 +58,12 @@ def parameters_generator():
 
 # The if __name__ == '__main__' part is necessary if running on Windows.
 if __name__ == '__main__':
-    instruments = ['JCI', 'AAPL', 'YUM', 'ABC']
+    instruments = ['JCI']
     # Load the feed from the CSV files.
-    feed = daq.build_stock_feed(instruments, (2010, 2015))
+    feed = daq.build_stock_feed(instruments, (2006, 2011))
 
-    local.run(strategies.EMACrossover, feed,
-              EMACrossoverParams(instruments), workerCount=4)
+    # local.run(strategies.EMACrossover, feed,
+    #           EMACrossoverParams(instruments), workerCount=None)
+
+    local.run(strategies.SLTRIXCrossover, feed,
+              SLTRIXCrossoverParams(instruments), workerCount=None)

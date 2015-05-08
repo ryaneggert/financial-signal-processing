@@ -42,7 +42,7 @@ class EMA(technical.EventBasedFilter):
 class TRIXEventWindow(technical.EventWindow):
 
     def __init__(self, flen, alphas):
-        technical.EventWindow.__init__(self, flen * 5)
+        technical.EventWindow.__init__(self, flen * 3)
         self.__alpha1 = alphas[0]
         self.__alpha2 = alphas[1]
         self.__alpha3 = alphas[2]
